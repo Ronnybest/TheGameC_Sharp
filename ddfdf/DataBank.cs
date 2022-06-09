@@ -11,8 +11,8 @@ namespace ddfdf
         //Main data
         public static int day = 1;
         public static double gold = 50;
-        public static double wood = 12100;
-        public static double stone = 12100;
+        public static double wood = 200;
+        public static double stone = 200;
         public static int human = 5;
         public static double food = 20;
         public static double minusFood = human;
