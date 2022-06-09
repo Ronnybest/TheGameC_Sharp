@@ -1,0 +1,17 @@
+C:\Users\melih\source\repos\ddfdf\ddfdf\bin\Debug\ddfdf.exe.config
+C:\Users\melih\source\repos\ddfdf\ddfdf\bin\Debug\ddfdf.exe
+C:\Users\melih\source\repos\ddfdf\ddfdf\bin\Debug\ddfdf.pdb
+C:\Users\melih\source\repos\ddfdf\ddfdf\bin\Debug\MaterialSkin.dll
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.csproj.AssemblyReference.cache
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.csproj.SuggestedBindingRedirects.cache
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.Properties.Resources.resources
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.csproj.GenerateResource.cache
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.csproj.CoreCompileInputs.cache
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.csproj.CopyComplete
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.exe
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.pdb
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.Form1.resources
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.FormFood.resources
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.FormWood.resources
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.FormStone.resources
+C:\Users\melih\source\repos\ddfdf\ddfdf\obj\Debug\ddfdf.FormBuildings.resources
