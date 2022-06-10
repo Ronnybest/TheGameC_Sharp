@@ -19,17 +19,17 @@ namespace ddfdf
         public FormBuildings()
         {
             InitializeComponent();
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(MaterialButton))
+                    buttons.Add(c);
+            }
             setInfo();
             checkPrice();
         }
 
         void checkPrice()
         {
-            foreach (Control c in this.Controls)
-            {
-                if (c.GetType() == typeof(MaterialButton))
-                    buttons.Add(c);
-            }
             BuildingInfo.setDisable(buttons);
         }
         void setInfo()
@@ -111,7 +111,7 @@ namespace ddfdf
         {
             if (checkRes(0))
             {
-                DataBank.upgrades["Samwill"] = DataBank.state_upgrade[0];
+                DataBank.upgrades["Sawmill"] = DataBank.state_upgrade[0];
                 DataBank.state_upgrade[0]++;
                 DataBank.wood -= DataBank.all_price[0];
                 DataBank.stone -= DataBank.all_price[1];

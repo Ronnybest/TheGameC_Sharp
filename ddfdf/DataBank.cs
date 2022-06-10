@@ -10,9 +10,9 @@ namespace ddfdf
     {
         //Main data
         public static int day = 1;
-        public static double gold = 50;
-        public static double wood = 200;
-        public static double stone = 200;
+        public static double gold = 22100;
+        public static double wood = 22200;
+        public static double stone = 22200;
         public static int human = 5;
         public static double food = 20;
         public static double minusFood = human;
@@ -32,7 +32,7 @@ namespace ddfdf
             500, 200, 300, 300, 200, 100, 100, 500, 300, 600, 500, 500, 700, 700, 700, 400, 1000, 1000 
         };
 
-        //Bonuses from buildings
+        //Bonuses from buildings and upgrades
         public static Dictionary<string, int> upgrades = new Dictionary<string, int>()
         {
             {"Sawmill", 0},
@@ -49,5 +49,7 @@ namespace ddfdf
         {
             1,1,1,1,1,1,1,1,1
         };
+
+
     }
 }

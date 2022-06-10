@@ -19,6 +19,8 @@ namespace ddfdf
         Random rand = new Random();
         //Timers
         static System.Windows.Forms.Timer TimerStart = new System.Windows.Forms.Timer();
+
+        
         public Form1()
         {
             InitializeComponent();
@@ -158,19 +160,27 @@ namespace ddfdf
                     {
                         double getFood = 0;
                         int value = rand.Next(1, 100);
+                        double upgrade_state = 1;
+                        if (DataBank.upgrades["Farm"].Equals(1))
+                            upgrade_state = 1.15;
+                        else if (DataBank.upgrades["Farm"].Equals(2))
+                            upgrade_state = 1.25;
+                        else if (DataBank.upgrades["Farm"].Equals(3))
+                            upgrade_state = 1.35;
+
                         if (value <= 15)
                         {
-                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5);
+                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * upgrade_state;
                             DataBank.food += getFood;
                         }
                         else if (value <= 30)
                         {
-                            getFood = DataBank.humantowork * 1.5;
+                            getFood = DataBank.humantowork * 1.5 * upgrade_state;
                             DataBank.food += getFood;
                         }
                         else
                         {
-                            getFood = DataBank.humantowork * 1.2;
+                            getFood = DataBank.humantowork * 1.2 * upgrade_state;
                             DataBank.food += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. провизии.");
@@ -202,19 +212,27 @@ namespace ddfdf
                     {
                         double getFood = 0;
                         int value = rand.Next(1, 100);
+                        // smwill upgrades
+                        double upgrade_state = 1;
+                        if (DataBank.upgrades["Sawmill"].Equals(1))
+                            upgrade_state = 1.1;
+                        else if (DataBank.upgrades["Sawmill"].Equals(2))
+                            upgrade_state = 1.2;
+                        else if (DataBank.upgrades["Sawmill"].Equals(3))
+                            upgrade_state = 1.3;
                         if (value <= 15)
                         {
-                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 5;
+                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 5 * upgrade_state;
                             DataBank.wood += getFood;
                         }
                         else if (value <= 30)
                         {
-                            getFood = DataBank.humantowork * 1.2 * 5;
+                            getFood = DataBank.humantowork * 1.2 * 5 * upgrade_state;
                             DataBank.wood += getFood;
                         }
                         else
                         {
-                            getFood = DataBank.humantowork * 5;
+                            getFood = DataBank.humantowork * 5 * upgrade_state;
                             DataBank.wood += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. дерева.");
@@ -246,19 +264,26 @@ namespace ddfdf
                     {
                         double getFood = 0;
                         int value = rand.Next(1, 100);
+                        double upgrade_state = 1;
+                        if (DataBank.upgrades["Quarry"].Equals(1))
+                            upgrade_state = 1.08;
+                        else if (DataBank.upgrades["Quarry"].Equals(2))
+                            upgrade_state = 1.16;
+                        else if (DataBank.upgrades["Quarry"].Equals(3))
+                            upgrade_state = 1.24;
                         if (value <= 15)
                         {
-                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 3;
+                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 3 * upgrade_state;
                             DataBank.stone += getFood;
                         }
                         else if (value <= 30)
                         {
-                            getFood = DataBank.humantowork * 1.2 * 3;
+                            getFood = DataBank.humantowork * 1.2 * 3 * upgrade_state;
                             DataBank.stone += getFood;
                         }
                         else
                         {
-                            getFood = DataBank.humantowork * 3;
+                            getFood = DataBank.humantowork * 3 * upgrade_state;
                             DataBank.stone += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. камня.");
