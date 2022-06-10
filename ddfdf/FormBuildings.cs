@@ -117,7 +117,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[1];
                 DataBank.all_price[0] *= upgrade_multip;
                 DataBank.all_price[1] *= upgrade_multip;
-                
+                DataBank.isSawmilBuild = true;
                 setInfo();
             }
         }
@@ -132,7 +132,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[17];
                 DataBank.all_price[16] *= upgrade_multip;
                 DataBank.all_price[17] *= upgrade_multip;
-                
+                DataBank.isBarracksBuild = true;
                 setInfo();
             }
         }
@@ -147,7 +147,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[5];
                 DataBank.all_price[4] *= upgrade_multip;
                 DataBank.all_price[5] *= upgrade_multip;
-                
+                DataBank.isFarmBuild = true;
                 setInfo();
             }
         }
@@ -162,7 +162,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[7];
                 DataBank.all_price[6] *= upgrade_multip;
                 DataBank.all_price[7] *= upgrade_multip;
-                
+                DataBank.isForgeBuild = true;
                 setInfo();
             }
         }
@@ -177,9 +177,10 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[9];
                 DataBank.all_price[8] *= upgrade_multip;
                 DataBank.all_price[9] *= upgrade_multip;
-                
+                DataBank.isShopBuild = true;
                 setInfo();
             }
+            
         }
 
         private void ButtonBuilding6_Click(object sender, EventArgs e)
@@ -192,7 +193,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[11];
                 DataBank.all_price[10] *= upgrade_multip;
                 DataBank.all_price[11] *= upgrade_multip;
-                
+                DataBank.isBankBuild = true;
                 setInfo();
             }
         }
@@ -207,7 +208,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[13];
                 DataBank.all_price[12] *= upgrade_multip;
                 DataBank.all_price[13] *= upgrade_multip;
-                
+                DataBank.isCityHallBuild = true;
                 setInfo();
             }
         }
@@ -222,7 +223,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[15];
                 DataBank.all_price[14] *= upgrade_multip;
                 DataBank.all_price[15] *= upgrade_multip;
-                
+                DataBank.isPortBuild = true;
                 setInfo();
             }
         }
@@ -237,7 +238,7 @@ namespace ddfdf
                 DataBank.stone -= DataBank.all_price[3];
                 DataBank.all_price[2] *= upgrade_multip;
                 DataBank.all_price[3] *= upgrade_multip;
-                
+                DataBank.isQuarryBuild = true;
                 setInfo();
             }
         }

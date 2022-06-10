@@ -42,6 +42,11 @@
             this.ButtonStone = new MaterialSkin.Controls.MaterialButton();
             this.LabelFreeWorker = new MaterialSkin.Controls.MaterialLabel();
             this.ButtonBuildings = new MaterialSkin.Controls.MaterialButton();
+            this.ButtonShop = new MaterialSkin.Controls.MaterialButton();
+            this.ButtonCityHall = new MaterialSkin.Controls.MaterialButton();
+            this.ButtonBank = new MaterialSkin.Controls.MaterialButton();
+            this.ButtonForge = new MaterialSkin.Controls.MaterialButton();
+            this.ButtonBarracks = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -258,11 +263,121 @@
             this.ButtonBuildings.UseVisualStyleBackColor = true;
             this.ButtonBuildings.Click += new System.EventHandler(this.ButtonBuildings_Click);
             // 
+            // ButtonShop
+            // 
+            this.ButtonShop.AutoSize = false;
+            this.ButtonShop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonShop.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ButtonShop.Depth = 0;
+            this.ButtonShop.HighEmphasis = true;
+            this.ButtonShop.Icon = null;
+            this.ButtonShop.Location = new System.Drawing.Point(180, 202);
+            this.ButtonShop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonShop.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonShop.Name = "ButtonShop";
+            this.ButtonShop.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ButtonShop.Size = new System.Drawing.Size(140, 36);
+            this.ButtonShop.TabIndex = 14;
+            this.ButtonShop.Text = "Рынок";
+            this.ButtonShop.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ButtonShop.UseAccentColor = false;
+            this.ButtonShop.UseVisualStyleBackColor = true;
+            this.ButtonShop.Visible = false;
+            // 
+            // ButtonCityHall
+            // 
+            this.ButtonCityHall.AutoSize = false;
+            this.ButtonCityHall.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonCityHall.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ButtonCityHall.Depth = 0;
+            this.ButtonCityHall.HighEmphasis = true;
+            this.ButtonCityHall.Icon = null;
+            this.ButtonCityHall.Location = new System.Drawing.Point(180, 250);
+            this.ButtonCityHall.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonCityHall.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonCityHall.Name = "ButtonCityHall";
+            this.ButtonCityHall.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ButtonCityHall.Size = new System.Drawing.Size(140, 36);
+            this.ButtonCityHall.TabIndex = 15;
+            this.ButtonCityHall.Text = "Мэрия";
+            this.ButtonCityHall.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ButtonCityHall.UseAccentColor = false;
+            this.ButtonCityHall.UseVisualStyleBackColor = true;
+            this.ButtonCityHall.Visible = false;
+            // 
+            // ButtonBank
+            // 
+            this.ButtonBank.AutoSize = false;
+            this.ButtonBank.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonBank.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ButtonBank.Depth = 0;
+            this.ButtonBank.HighEmphasis = true;
+            this.ButtonBank.Icon = null;
+            this.ButtonBank.Location = new System.Drawing.Point(356, 154);
+            this.ButtonBank.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonBank.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonBank.Name = "ButtonBank";
+            this.ButtonBank.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ButtonBank.Size = new System.Drawing.Size(140, 36);
+            this.ButtonBank.TabIndex = 16;
+            this.ButtonBank.Text = "Банк";
+            this.ButtonBank.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ButtonBank.UseAccentColor = false;
+            this.ButtonBank.UseVisualStyleBackColor = true;
+            this.ButtonBank.Visible = false;
+            // 
+            // ButtonForge
+            // 
+            this.ButtonForge.AutoSize = false;
+            this.ButtonForge.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonForge.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ButtonForge.Depth = 0;
+            this.ButtonForge.HighEmphasis = true;
+            this.ButtonForge.Icon = null;
+            this.ButtonForge.Location = new System.Drawing.Point(356, 202);
+            this.ButtonForge.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonForge.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonForge.Name = "ButtonForge";
+            this.ButtonForge.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ButtonForge.Size = new System.Drawing.Size(140, 36);
+            this.ButtonForge.TabIndex = 17;
+            this.ButtonForge.Text = "Кузница";
+            this.ButtonForge.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ButtonForge.UseAccentColor = false;
+            this.ButtonForge.UseVisualStyleBackColor = true;
+            this.ButtonForge.Visible = false;
+            // 
+            // ButtonBarracks
+            // 
+            this.ButtonBarracks.AutoSize = false;
+            this.ButtonBarracks.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonBarracks.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ButtonBarracks.Depth = 0;
+            this.ButtonBarracks.HighEmphasis = true;
+            this.ButtonBarracks.Icon = null;
+            this.ButtonBarracks.Location = new System.Drawing.Point(356, 250);
+            this.ButtonBarracks.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonBarracks.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonBarracks.Name = "ButtonBarracks";
+            this.ButtonBarracks.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ButtonBarracks.Size = new System.Drawing.Size(140, 36);
+            this.ButtonBarracks.TabIndex = 18;
+            this.ButtonBarracks.Text = "Казармы";
+            this.ButtonBarracks.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ButtonBarracks.UseAccentColor = false;
+            this.ButtonBarracks.UseVisualStyleBackColor = true;
+            this.ButtonBarracks.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 564);
+            this.Controls.Add(this.ButtonBarracks);
+            this.Controls.Add(this.ButtonForge);
+            this.Controls.Add(this.ButtonBank);
+            this.Controls.Add(this.ButtonCityHall);
+            this.Controls.Add(this.ButtonShop);
             this.Controls.Add(this.ButtonBuildings);
             this.Controls.Add(this.LabelFreeWorker);
             this.Controls.Add(this.ButtonStone);
@@ -299,6 +414,11 @@
         private MaterialSkin.Controls.MaterialButton ButtonStone;
         private MaterialSkin.Controls.MaterialLabel LabelFreeWorker;
         private MaterialSkin.Controls.MaterialButton ButtonBuildings;
+        private MaterialSkin.Controls.MaterialButton ButtonShop;
+        private MaterialSkin.Controls.MaterialButton ButtonCityHall;
+        private MaterialSkin.Controls.MaterialButton ButtonBank;
+        private MaterialSkin.Controls.MaterialButton ButtonForge;
+        private MaterialSkin.Controls.MaterialButton ButtonBarracks;
     }
 }
 

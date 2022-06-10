@@ -50,6 +50,11 @@ namespace ddfdf
             1,1,1,1,1,1,1,1,1
         };
 
+        // Checkers for buildings button
+        public static bool isShopBuild = false, isCityHallBuild = false,
+            isSawmilBuild = false, isBankBuild = false, isQuarryBuild = false, isFarmBuild = false,
+            isForgeBuild = false, isPortBuild = false, isBarracksBuild = false;
+
 
     }
 }

@@ -92,6 +92,21 @@ namespace ddfdf
             UpdateInfo(sender, e, true);
             TimerStart.Start();
         }
+
+        private void BuildBuildings()
+        {
+            if (DataBank.isShopBuild == true && ButtonShop.Visible == false)
+                ButtonShop.Visible = true;
+            if (DataBank.isCityHallBuild == true && ButtonCityHall.Visible == false)
+                ButtonCityHall.Visible = true;
+            if (DataBank.isBankBuild == true && ButtonBank.Visible == false)
+                ButtonBank.Visible = true;
+            if (DataBank.isBarracksBuild == true && ButtonBarracks.Visible == false)
+                ButtonBarracks.Visible = true;
+            if (DataBank.isForgeBuild == true && ButtonForge.Visible == false)
+                ButtonForge.Visible = true;
+        }
+
         private void UpdateInfo(object sender, EventArgs e, bool mainUpdate)
         {
             LabelGold.Text = "Золото: " + DataBank.gold;
@@ -99,6 +114,7 @@ namespace ddfdf
             LabelStone.Text = "Камень: " + DataBank.stone;
             LabelHuman.Text = "Население: " + DataBank.human;
             LabelFreeWorker.Text = "Свободных: " + DataBank.freeHuman;
+            BuildBuildings();
             if (mainUpdate)
             {
                 DataBank.food -= DataBank.minusFood;
