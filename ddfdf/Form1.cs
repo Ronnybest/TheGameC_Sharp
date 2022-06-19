@@ -19,11 +19,14 @@ namespace ddfdf
         Random rand = new Random();
         //Timers
         static System.Windows.Forms.Timer TimerStart = new System.Windows.Forms.Timer();
-
-        
+        private bool getDie = false;
+        private bool shows = false;
+        private int day_to_end_food = 3;
         public Form1()
         {
             InitializeComponent();
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -43,8 +46,7 @@ namespace ddfdf
             TimerStart.Interval = 1000;
             TimerStart.Start();
         }
-
-
+        
         public static Task<object> GetTaskFromEvent(object o, string evt)
         {
             if (o == null || evt == null) throw new ArgumentNullException("Arguments cannot be null");
@@ -77,10 +79,16 @@ namespace ddfdf
 
         private void tm_Tick(object sender, EventArgs e)
         {
-            if (DataBank.food < DataBank.human)
+            if (DataBank.food >= DataBank.human)
+            {
+                getDie = false;
+            }
+            if (DataBank.food < DataBank.human && shows != true)
             {
                 TimerStart.Stop();
-                MessageBox.Show("Ваши люди голодают. Необходимо добыть провизию.");
+                MessageBox.Show($"Ваши люди голодают. Необходимо добыть провизию.\nУ вас есть {day_to_end_food} дн., чтобы восстановить добычу провизии.");
+                day_to_end_food--;
+                getDie = true;
             }
         }
 
@@ -90,7 +98,25 @@ namespace ddfdf
             materialLabel1.Text = "День " + DataBank.day;
             DataBank.day++;
             UpdateInfo(sender, e, true);
+            if (getDie)
+                DataBank.count_days_to_die++;
+            if (DataBank.count_days_to_die >= 3 || DataBank.food <= 0) 
+                EndGame();
             TimerStart.Start();
+        }
+
+        private void EndGame()
+        {
+            DialogResult result = MessageBox.Show("Начать новую игру?", "Игра окончена", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                //DataBank.SetDefault();
+                Application.Restart();
+            }
+            if(result == DialogResult.No)
+            {
+                Application.Exit();
+            }
         }
 
         private void BuildBuildings()

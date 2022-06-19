@@ -45,8 +45,7 @@
             this.materialSlider1.Size = new System.Drawing.Size(344, 40);
             this.materialSlider1.TabIndex = 0;
             this.materialSlider1.Text = "Кол-во людей на добычу";
-            this.materialSlider1.Value = 1;
-            this.materialSlider1.ValueMax = 10;
+            this.materialSlider1.Value = 0;
             this.materialSlider1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.materialSlider1_MouseUp);
             // 
             // materialButton1
