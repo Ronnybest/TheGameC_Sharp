@@ -16,11 +16,10 @@ namespace ddfdf
     public partial class Form1 : MaterialForm
     {
         //random
-        Random rand = new Random();
+        private readonly Random rand = new Random();
         //Timers
-        static System.Windows.Forms.Timer TimerStart = new System.Windows.Forms.Timer();
+        //static readonly System.Windows.Forms.Timer TimerStart = new System.Windows.Forms.Timer();
         private bool getDie = false;
-        private bool shows = false;
         private int day_to_end_food = 3;
         public Form1()
         {
@@ -42,9 +41,6 @@ namespace ddfdf
             LabelMoves.Text = "Ходов осталось: " + DataBank.moves;
             LabelFreeWorker.Text = "Свободных: " + DataBank.freeHuman;
             //Timers
-            TimerStart.Tick += new EventHandler(tm_Tick);
-            TimerStart.Interval = 1000;
-            TimerStart.Start();
         }
         
         public static Task<object> GetTaskFromEvent(object o, string evt)
@@ -77,32 +73,29 @@ namespace ddfdf
             return tcs.Task;
         } // Wait close form
 
-        private void tm_Tick(object sender, EventArgs e)
+
+        //Day counter
+        private void MaterialButton1_Click(object sender, EventArgs e)
         {
+            materialLabel1.Text = "День " + DataBank.day;
+            DataBank.day++;
+            UpdateInfo(true);
             if (DataBank.food >= DataBank.human)
             {
                 getDie = false;
+                day_to_end_food = 3;
+                DataBank.count_days_to_die = 0;
             }
-            if (DataBank.food < DataBank.human && shows != true)
+            if (DataBank.food < DataBank.human)
             {
-                TimerStart.Stop();
+                if (DataBank.count_days_to_die >= 3 || DataBank.food <= 0)
+                    EndGame();
                 MessageBox.Show($"Ваши люди голодают. Необходимо добыть провизию.\nУ вас есть {day_to_end_food} дн., чтобы восстановить добычу провизии.");
                 day_to_end_food--;
                 getDie = true;
             }
-        }
-
-        //Day counter
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            materialLabel1.Text = "День " + DataBank.day;
-            DataBank.day++;
-            UpdateInfo(sender, e, true);
             if (getDie)
                 DataBank.count_days_to_die++;
-            if (DataBank.count_days_to_die >= 3 || DataBank.food <= 0) 
-                EndGame();
-            TimerStart.Start();
         }
 
         private void EndGame()
@@ -133,7 +126,7 @@ namespace ddfdf
                 ButtonForge.Visible = true;
         }
 
-        private void UpdateInfo(object sender, EventArgs e, bool mainUpdate)
+        private void UpdateInfo(bool mainUpdate)
         {
             LabelGold.Text = "Золото: " + DataBank.gold;
             LabelWood.Text = "Дерево: " + DataBank.wood;
@@ -200,7 +193,6 @@ namespace ddfdf
                     await GetTaskFromEvent(frmFood, "FormClosed"); // wait event "close form"
                     if (DataBank.isReadyToFood)
                     {
-                        double getFood = 0;
                         int value = rand.Next(1, 100);
                         double upgrade_state = 1;
                         if (DataBank.upgrades["Farm"].Equals(1))
@@ -210,6 +202,7 @@ namespace ddfdf
                         else if (DataBank.upgrades["Farm"].Equals(3))
                             upgrade_state = 1.35;
 
+                        double getFood;
                         if (value <= 15)
                         {
                             getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * upgrade_state;
@@ -226,7 +219,7 @@ namespace ddfdf
                             DataBank.food += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. провизии.");
-                        UpdateInfo(sender, e, false);
+                        UpdateInfo(false);
                         ButtonFood.Enabled = false;
                     }
                 }
@@ -252,7 +245,6 @@ namespace ddfdf
                     await GetTaskFromEvent(frmFood, "FormClosed"); // wait event "close form"
                     if (DataBank.isReadyToWood)
                     {
-                        double getFood = 0;
                         int value = rand.Next(1, 100);
                         // smwill upgrades
                         double upgrade_state = 1;
@@ -262,6 +254,7 @@ namespace ddfdf
                             upgrade_state = 1.2;
                         else if (DataBank.upgrades["Sawmill"].Equals(3))
                             upgrade_state = 1.3;
+                        double getFood;
                         if (value <= 15)
                         {
                             getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 5 * upgrade_state;
@@ -278,7 +271,7 @@ namespace ddfdf
                             DataBank.wood += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. дерева.");
-                        UpdateInfo(sender, e, false);
+                        UpdateInfo(false);
                         ButtonWood.Enabled = false;
                     }
                 }
@@ -304,7 +297,6 @@ namespace ddfdf
                     await GetTaskFromEvent(frmFood, "FormClosed"); // wait event "close form"
                     if (DataBank.isReadyToStone)
                     {
-                        double getFood = 0;
                         int value = rand.Next(1, 100);
                         double upgrade_state = 1;
                         if (DataBank.upgrades["Quarry"].Equals(1))
@@ -313,6 +305,7 @@ namespace ddfdf
                             upgrade_state = 1.16;
                         else if (DataBank.upgrades["Quarry"].Equals(3))
                             upgrade_state = 1.24;
+                        double getFood;
                         if (value <= 15)
                         {
                             getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * 3 * upgrade_state;
@@ -329,7 +322,7 @@ namespace ddfdf
                             DataBank.stone += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. камня.");
-                        UpdateInfo(sender, e, false);
+                        UpdateInfo(false);
                         ButtonStone.Enabled = false;
                     }
                 }
@@ -349,7 +342,7 @@ namespace ddfdf
             FormBuildings frm = new FormBuildings();
             frm.Show();
             await GetTaskFromEvent(frm, "FormClosed");
-            UpdateInfo(sender, e, false);
+            UpdateInfo(false);
         }
     }
 }
