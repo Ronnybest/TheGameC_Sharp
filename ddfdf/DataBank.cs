@@ -1,8 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ddfdf
 {
@@ -14,8 +11,8 @@ namespace ddfdf
             gold = 22100;
             wood = 22200;
             stone = 22200;
-            human = 5;
-            food = 20;
+            human = 20;
+            food = 50;
             minusFood = human;
             freeHuman = human;
             //Data for find food
@@ -44,15 +41,20 @@ namespace ddfdf
             };
             isShopBuild = false; isCityHallBuild = false;
             isSawmilBuild = false; isBankBuild = false; isQuarryBuild = false; isFarmBuild = false;
-            isForgeBuild = false; isPortBuild = false; isBarracksBuild = false;
-        }
+            isForgeBuild = false; isPortBuild = false; isBarracksBuild = false; isMedCenterBuild = false;
+
+            //Bonuses and events
+            foodBonus = 1d;
+            isCaravanHere = false;
+            CaravanDays = 0;
+    }
         //Main data
         public static int day = 1;
         public static double gold = 22100;
         public static double wood = 22200;
         public static double stone = 22200;
-        public static int human = 15;
-        public static double food = 20;
+        public static int human = 20;
+        public static double food = 50;
         public static double minusFood = human;
         public static int freeHuman = human;
         //Data for find food
@@ -93,7 +95,15 @@ namespace ddfdf
         // Checkers for buildings button
         public static bool isShopBuild = false, isCityHallBuild = false,
             isSawmilBuild = false, isBankBuild = false, isQuarryBuild = false, isFarmBuild = false,
-            isForgeBuild = false, isPortBuild = false, isBarracksBuild = false;
+            isForgeBuild = false, isPortBuild = false, isBarracksBuild = false, isMedCenterBuild = false;
+
+        //Bonuses and events
+        public static double foodBonus = 1d;
+        public static double woodInWinter = 1.3;
+        public static bool isCaravanHere = false;
+        public static int CaravanDays = 0;
+        public static bool alreadyFoodEvent = false;
+        public static short SeasonForFoodEvent = 0;
 
 
     }

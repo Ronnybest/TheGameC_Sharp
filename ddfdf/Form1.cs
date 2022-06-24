@@ -1,13 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,6 +15,7 @@ namespace ddfdf
         //static readonly System.Windows.Forms.Timer TimerStart = new System.Windows.Forms.Timer();
         private bool getDie = false;
         private int day_to_end_food = 3;
+        private GenerateEvents events = new GenerateEvents();
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +25,8 @@ namespace ddfdf
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightGreen100, TextShade.WHITE);
-            materialLabel1.Text = "День " + DataBank.day;
+            
+            materialLabel1.Text = $"День {DataBank.day}";
             DataBank.day++;
             LabelGold.Text = "Золото: " + DataBank.gold;
             LabelWood.Text = "Дерево: " + DataBank.wood;
@@ -79,6 +75,7 @@ namespace ddfdf
         {
             materialLabel1.Text = "День " + DataBank.day;
             DataBank.day++;
+            events.Generate();
             UpdateInfo(true);
             if (DataBank.food >= DataBank.human)
             {
@@ -89,7 +86,10 @@ namespace ddfdf
             if (DataBank.food < DataBank.human)
             {
                 if (DataBank.count_days_to_die >= 3 || DataBank.food <= 0)
+                {
                     EndGame();
+                    return;
+                }
                 MessageBox.Show($"Ваши люди голодают. Необходимо добыть провизию.\nУ вас есть {day_to_end_food} дн., чтобы восстановить добычу провизии.");
                 day_to_end_food--;
                 getDie = true;
@@ -104,6 +104,7 @@ namespace ddfdf
             if(result == DialogResult.Yes)
             {
                 //DataBank.SetDefault();
+                //UpdateInfo(true);
                 Application.Restart();
             }
             if(result == DialogResult.No)
@@ -140,8 +141,11 @@ namespace ddfdf
                 LabelFood.Text = "Провизия: " + DataBank.food;
                 DataBank.moves = 5;
                 DataBank.freeHuman = DataBank.human;
+                DataBank.minusFood = DataBank.human;
                 LabelMoves.Text = "Ходов осталось: " + DataBank.moves;
                 LabelFreeWorker.Text = "Свободных: " + DataBank.freeHuman;
+                LabelMinusFood.Text = "- " + DataBank.minusFood;
+                //materialLabel1.Text = "День " + DataBank.day;
                 // Turn all buttons to enable
                 foreach (Control control in this.Controls)
                 {
@@ -205,17 +209,17 @@ namespace ddfdf
                         double getFood;
                         if (value <= 15)
                         {
-                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.5) * upgrade_state;
+                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.7) * upgrade_state;
                             DataBank.food += getFood;
                         }
                         else if (value <= 30)
                         {
-                            getFood = DataBank.humantowork * 1.5 * upgrade_state;
+                            getFood = DataBank.humantowork * 2.5 * upgrade_state;
                             DataBank.food += getFood;
                         }
                         else
                         {
-                            getFood = DataBank.humantowork * 1.2 * upgrade_state;
+                            getFood = DataBank.humantowork * 1.8 * upgrade_state;
                             DataBank.food += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. провизии.");
