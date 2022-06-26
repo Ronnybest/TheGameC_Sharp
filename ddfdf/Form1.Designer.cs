@@ -47,6 +47,8 @@
             this.ButtonBank = new MaterialSkin.Controls.MaterialButton();
             this.ButtonForge = new MaterialSkin.Controls.MaterialButton();
             this.ButtonBarracks = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.LabelMsg = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -368,11 +370,38 @@
             this.ButtonBarracks.UseVisualStyleBackColor = true;
             this.ButtonBarracks.Visible = false;
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
+            this.materialLabel2.Location = new System.Drawing.Point(8, 519);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(130, 14);
+            this.materialLabel2.TabIndex = 19;
+            this.materialLabel2.Text = "Последние сообщения";
+            // 
+            // LabelMsg
+            // 
+            this.LabelMsg.AutoSize = true;
+            this.LabelMsg.Depth = 0;
+            this.LabelMsg.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.LabelMsg.Location = new System.Drawing.Point(7, 536);
+            this.LabelMsg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LabelMsg.Name = "LabelMsg";
+            this.LabelMsg.Size = new System.Drawing.Size(166, 19);
+            this.LabelMsg.TabIndex = 20;
+            this.LabelMsg.Text = "Нет новых сообщений";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 564);
+            this.Controls.Add(this.LabelMsg);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.ButtonBarracks);
             this.Controls.Add(this.ButtonForge);
             this.Controls.Add(this.ButtonBank);
@@ -421,6 +450,8 @@
         private MaterialSkin.Controls.MaterialButton ButtonBank;
         private MaterialSkin.Controls.MaterialButton ButtonForge;
         private MaterialSkin.Controls.MaterialButton ButtonBarracks;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel LabelMsg;
     }
 }
 

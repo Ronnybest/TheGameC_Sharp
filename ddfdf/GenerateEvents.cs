@@ -27,7 +27,7 @@ namespace ddfdf
                     }break;
                 case 2:
                     {
-                        v = rand.Next();
+                        v = rand.Next(1, 10);
                         if (DataBank.isMedCenterBuild == false)
                         {
                             MessageBox.Show($"Несколько жителей погибло из-за падения ели во время добычи дерева\n" +

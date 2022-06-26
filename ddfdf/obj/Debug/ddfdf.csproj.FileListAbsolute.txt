@@ -32,3 +32,7 @@ C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.csproj.CoreComp
 C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.csproj.CopyComplete
 C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.exe
 C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.pdb
+C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\bin\Debug\ddfdf.exe.manifest
+C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\bin\Debug\ddfdf.application
+C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.exe.manifest
+C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.application

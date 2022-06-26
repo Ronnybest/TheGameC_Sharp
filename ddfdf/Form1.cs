@@ -26,7 +26,7 @@ namespace ddfdf
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightGreen100, TextShade.WHITE);
             
-            materialLabel1.Text = $"День {DataBank.day}";
+            materialLabel1.Text = $"День {DataBank.day + 1}";
             DataBank.day++;
             LabelGold.Text = "Золото: " + DataBank.gold;
             LabelWood.Text = "Дерево: " + DataBank.wood;
@@ -73,9 +73,11 @@ namespace ddfdf
         //Day counter
         private void MaterialButton1_Click(object sender, EventArgs e)
         {
-            materialLabel1.Text = "День " + DataBank.day;
+            materialLabel1.Text = "День " + (DataBank.day + 1);
             DataBank.day++;
-            events.Generate();
+            if(DataBank.day % 4 == 0) //every 4 days new event
+                events.Generate();
+            HumansUp();
             UpdateInfo(true);
             if (DataBank.food >= DataBank.human)
             {
@@ -96,6 +98,34 @@ namespace ddfdf
             }
             if (getDie)
                 DataBank.count_days_to_die++;
+        }
+
+        private void HumansUp()
+        {
+            int chance = rand.Next(1, 100);
+            if (DataBank.food > DataBank.human && DataBank.day % 7 == 0) // every 7 days and if food > humans new "child"
+            {
+                int newHuman = rand.Next(1, DataBank.human / 4);
+                DataBank.human += newHuman;
+                LabelMsg.Text = $"В вашем поселении появилось на свет {newHuman} чел.";
+                return;
+            }
+            else if (chance <= 10 && DataBank.human >= 10) 
+            {
+                int dieHuman = rand.Next(1, DataBank.human / 6); // if chance <= 10% so some human will die
+                DataBank.human -= dieHuman;
+                LabelMsg.Text = $"В вашем поселении умерло от старости {dieHuman} чел.";
+                
+            }
+            else
+            {
+                ClearMsg();
+            }
+        }
+
+        private void ClearMsg()
+        {
+            LabelMsg.Text = "Нет новых сообщений";
         }
 
         private void EndGame()

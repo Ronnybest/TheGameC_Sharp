@@ -49,12 +49,12 @@ namespace ddfdf
             CaravanDays = 0;
     }
         //Main data
-        public static int day = 1;
+        public static int day = 0;
         public static double gold = 22100;
         public static double wood = 22200;
         public static double stone = 22200;
         public static int human = 20;
-        public static double food = 50;
+        public static double food = 12350;
         public static double minusFood = human;
         public static int freeHuman = human;
         //Data for find food
