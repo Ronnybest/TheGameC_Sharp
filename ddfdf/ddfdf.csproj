@@ -80,7 +80,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllMsgForm.Designer.cs">
+      <DependentUpon>AllMsgForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuildingInfo.cs" />
+    <Compile Include="CityHallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityHallForm.Designer.cs">
+      <DependentUpon>CityHallForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBank.cs" />
     <Compile Include="DefaultData.cs" />
     <Compile Include="Form1.cs">
@@ -116,6 +128,12 @@
     <Compile Include="GenerateEvents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllMsgForm.resx">
+      <DependentUpon>AllMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CityHallForm.resx">
+      <DependentUpon>CityHallForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

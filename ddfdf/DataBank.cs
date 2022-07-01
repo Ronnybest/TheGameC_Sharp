@@ -92,6 +92,9 @@ namespace ddfdf
             1,1,1,1,1,1,1,1,1
         };
 
+        // All Msg data
+        public static List<string> msgList = new List<string>();
+
         // Checkers for buildings button
         public static bool isShopBuild = false, isCityHallBuild = false,
             isSawmilBuild = false, isBankBuild = false, isQuarryBuild = false, isFarmBuild = false,
@@ -105,6 +108,9 @@ namespace ddfdf
         public static bool alreadyFoodEvent = false;
         public static short SeasonForFoodEvent = 0;
 
-
+        //City Hall data
+        public static int currentNalog = 0;
+        public static int maxNalog = 3;
+        public static bool NalogReady = false;
     }
 }

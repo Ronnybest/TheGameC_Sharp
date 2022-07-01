@@ -306,6 +306,7 @@
             this.ButtonCityHall.UseAccentColor = false;
             this.ButtonCityHall.UseVisualStyleBackColor = true;
             this.ButtonCityHall.Visible = false;
+            this.ButtonCityHall.Click += new System.EventHandler(this.ButtonCityHall_Click);
             // 
             // ButtonBank
             // 
@@ -382,6 +383,7 @@
             this.materialLabel2.Size = new System.Drawing.Size(130, 14);
             this.materialLabel2.TabIndex = 19;
             this.materialLabel2.Text = "Последние сообщения";
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // LabelMsg
             // 

@@ -36,3 +36,5 @@ C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\bin\Debug\ddfdf.exe.manifest
 C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\bin\Debug\ddfdf.application
 C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.exe.manifest
 C:\Users\melih\source\repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.application
+C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.CityHallForm.resources
+C:\Users\melih\Source\Repos\TheGameC_Sharp\ddfdf\obj\Debug\ddfdf.AllMsgForm.resources

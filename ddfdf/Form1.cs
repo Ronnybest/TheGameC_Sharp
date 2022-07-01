@@ -77,6 +77,16 @@ namespace ddfdf
             DataBank.day++;
             if(DataBank.day % 4 == 0) //every 4 days new event
                 events.Generate();
+            if(DataBank.day % 3 == 0 && DataBank.NalogReady == true)
+            {
+                ClearMsg();
+                double nalogPlus;
+                nalogPlus = DataBank.human * DataBank.currentNalog;
+                DataBank.gold += nalogPlus;
+                LabelMsg.Text = $"Поступление с налогов: {nalogPlus}";
+                addNewMsg(LabelMsg.Text);
+                
+            }
             HumansUp();
             UpdateInfo(true);
             if (DataBank.food >= DataBank.human)
@@ -100,6 +110,11 @@ namespace ddfdf
                 DataBank.count_days_to_die++;
         }
 
+        private void addNewMsg(string msg)
+        {
+            DataBank.msgList.Add($"День: {DataBank.day} | {msg}");
+        }
+
         private void HumansUp()
         {
             int chance = rand.Next(1, 100);
@@ -108,6 +123,7 @@ namespace ddfdf
                 int newHuman = rand.Next(1, DataBank.human / 4);
                 DataBank.human += newHuman;
                 LabelMsg.Text = $"В вашем поселении появилось на свет {newHuman} чел.";
+                addNewMsg(LabelMsg.Text);
                 return;
             }
             else if (chance <= 10 && DataBank.human >= 10) 
@@ -115,11 +131,12 @@ namespace ddfdf
                 int dieHuman = rand.Next(1, DataBank.human / 6); // if chance <= 10% so some human will die
                 DataBank.human -= dieHuman;
                 LabelMsg.Text = $"В вашем поселении умерло от старости {dieHuman} чел.";
-                
+                addNewMsg(LabelMsg.Text);
+
             }
             else
             {
-                ClearMsg();
+                //ClearMsg();
             }
         }
 
@@ -377,6 +394,19 @@ namespace ddfdf
             frm.Show();
             await GetTaskFromEvent(frm, "FormClosed");
             UpdateInfo(false);
+        }
+
+        private async void ButtonCityHall_Click(object sender, EventArgs e)
+        {
+            Form frm = new CityHallForm();
+            frm.Show();
+            await GetTaskFromEvent(frm, "FormClosed");
+        }
+
+        private void materialLabel2_Click(object sender, EventArgs e)
+        {
+            Form form = new AllMsgForm();
+            form.Show();
         }
     }
 }

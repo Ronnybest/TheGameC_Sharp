@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ddfdf.exe" size="50600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ddfdf.exe" size="55208">
       <assemblyIdentity name="ddfdf" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OqsR3xo1HEye2HLzNdn1IiHDfWpi95n4aZLm175SWLM=</dsig:DigestValue>
+        <dsig:DigestValue>zCB51iy4jJHj1HZ7xGWUZH5gSIoenDt7ETU4aAnX5sM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
