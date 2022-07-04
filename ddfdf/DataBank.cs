@@ -47,7 +47,21 @@ namespace ddfdf
             foodBonus = 1d;
             isCaravanHere = false;
             CaravanDays = 0;
+            alreadyFoodEvent = false;
+            SeasonForFoodEvent = 0;
+
+        //City Hall data
+        currentNalog = 0;
+        maxNalog = 3;
+        NalogReady = false;
+
+        //Seasons
+        seasons = new List<string>() { "весна", "лето", "осень", "зима" };
+        currentSeason = 0;
     }
+
+
+
         //Main data
         public static int day = 0;
         public static double gold = 22100;
@@ -102,7 +116,7 @@ namespace ddfdf
 
         //Bonuses and events
         public static double foodBonus = 1d;
-        public static double woodInWinter = 1.3;
+        public static double woodInWinter = 1.3d;
         public static bool isCaravanHere = false;
         public static int CaravanDays = 0;
         public static bool alreadyFoodEvent = false;
@@ -112,5 +126,10 @@ namespace ddfdf
         public static int currentNalog = 0;
         public static int maxNalog = 3;
         public static bool NalogReady = false;
+
+        //Seasons
+        public static List<string> seasons = new List<string>() {"весна", "лето", "осень", "зима" };
+        public static int currentSeason = 0;
+        public static double influenceBySeasons = 1.0d;
     }
 }

@@ -49,6 +49,7 @@
             this.ButtonBarracks = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.LabelMsg = new MaterialSkin.Controls.MaterialLabel();
+            this.LabelSeasons = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -77,7 +78,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(6, 73);
+            this.materialLabel1.Location = new System.Drawing.Point(6, 72);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(65, 29);
@@ -397,11 +398,24 @@
             this.LabelMsg.TabIndex = 20;
             this.LabelMsg.Text = "Нет новых сообщений";
             // 
+            // LabelSeasons
+            // 
+            this.LabelSeasons.AutoSize = true;
+            this.LabelSeasons.Depth = 0;
+            this.LabelSeasons.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.LabelSeasons.Location = new System.Drawing.Point(8, 101);
+            this.LabelSeasons.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LabelSeasons.Name = "LabelSeasons";
+            this.LabelSeasons.Size = new System.Drawing.Size(105, 19);
+            this.LabelSeasons.TabIndex = 21;
+            this.LabelSeasons.Text = "CurrentSeason";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 564);
+            this.Controls.Add(this.LabelSeasons);
             this.Controls.Add(this.LabelMsg);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.ButtonBarracks);
@@ -454,6 +468,7 @@
         private MaterialSkin.Controls.MaterialButton ButtonBarracks;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel LabelMsg;
+        private MaterialSkin.Controls.MaterialLabel LabelSeasons;
     }
 }
 

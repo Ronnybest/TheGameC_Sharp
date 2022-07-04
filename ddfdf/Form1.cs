@@ -36,6 +36,7 @@ namespace ddfdf
             LabelMinusFood.Text = "- " + DataBank.minusFood;
             LabelMoves.Text = "Ходов осталось: " + DataBank.moves;
             LabelFreeWorker.Text = "Свободных: " + DataBank.freeHuman;
+            LabelSeasons.Text = DataBank.seasons[DataBank.currentSeason];
             //Timers
         }
         
@@ -108,6 +109,35 @@ namespace ddfdf
             }
             if (getDie)
                 DataBank.count_days_to_die++;
+            if (DataBank.day % 21 == 0)
+            {
+                DataBank.currentSeason++;
+                LabelSeasons.Text = DataBank.seasons[DataBank.currentSeason];
+                ClearMsg();
+                if (DataBank.seasons[DataBank.currentSeason] != "лето")
+                    LabelMsg.Text = $"Наступила {DataBank.seasons[DataBank.currentSeason]}";
+                else
+                    LabelMsg.Text = $"Наступило {DataBank.seasons[DataBank.currentSeason]}";
+                addNewMsg(LabelMsg.Text);
+            }
+                if(DataBank.seasons[DataBank.currentSeason] == "лето")
+                {
+                    DataBank.influenceBySeasons = 1.4d;
+                }
+                else if (DataBank.seasons[DataBank.currentSeason] == "осень")
+                {
+                    DataBank.influenceBySeasons = 1.2d;
+                }
+                else if (DataBank.seasons[DataBank.currentSeason] == "зима")
+                {
+                    DataBank.influenceBySeasons = 0.8d;
+                    DataBank.wood -= DataBank.human * 3;
+                }
+                else if (DataBank.seasons[DataBank.currentSeason] == "весна")
+                {
+                    DataBank.influenceBySeasons = 1.0d;
+                }
+            
         }
 
         private void addNewMsg(string msg)
@@ -256,17 +286,20 @@ namespace ddfdf
                         double getFood;
                         if (value <= 15)
                         {
-                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.7) * upgrade_state;
+                            getFood = DataBank.humantowork + (DataBank.humantowork * 0.7) * upgrade_state * 
+                                DataBank.influenceBySeasons;
                             DataBank.food += getFood;
                         }
                         else if (value <= 30)
                         {
-                            getFood = DataBank.humantowork * 2.5 * upgrade_state;
+                            getFood = DataBank.humantowork * 2.5 * upgrade_state *
+                                DataBank.influenceBySeasons;
                             DataBank.food += getFood;
                         }
                         else
                         {
-                            getFood = DataBank.humantowork * 1.8 * upgrade_state;
+                            getFood = DataBank.humantowork * 1.8 * upgrade_state *
+                                DataBank.influenceBySeasons;
                             DataBank.food += getFood;
                         }
                         MessageBox.Show("Ваши люди добыли " + getFood + " ед. провизии.");
